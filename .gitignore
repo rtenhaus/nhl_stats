@@ -1,0 +1,5 @@
+.DS_Store
+
+01_extract/venv/
+02_load/venv/
+03_transform/venv/
