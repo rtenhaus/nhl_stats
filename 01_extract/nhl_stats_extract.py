@@ -6,7 +6,7 @@ import json
 
 
 # Get games for a specified date range
-games = list_games('2020-01-01','2020-01-05')
+games = list_games('2020-01-01','2020-01-10')
 
 all_games = []  # Empty list to hold modified game data
 
