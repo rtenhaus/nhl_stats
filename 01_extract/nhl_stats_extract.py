@@ -2,6 +2,7 @@
 
 from nhlstats import list_games, list_plays, list_shots, list_shifts
 import jsonlines
+import json
 
 
 # Get games for a specified date range
@@ -18,7 +19,7 @@ for game in games:
     new_game = {
         'game_id': game_id,
         'game_date' : game_date,
-        'data' : game
+        'data' : json.dumps(game)
     }    
 
     # Extract Plays from a Game
@@ -30,13 +31,13 @@ for game in games:
         new_play = {
             'game_id' : game_id,
             'game_date' : game_date,
-            'data' : play
+            'data' : json.dumps(play)
         }
         
         game_plays.append(new_play)
 
     with jsonlines.open(f'../data/plays/plays_{game_id}.jsonl', 'w') as writer:
-        writer.write(game_plays)
+        writer.write_all(game_plays)
 
     # Extract Shots from a Game
     shots = list_shots(game_id)
@@ -47,13 +48,13 @@ for game in games:
         new_shot = {
             'game_id' : game_id,
             'game_date' : game_date,
-            'data' : shot
+            'data' : json.dumps(shot)
         }
         
         game_shots.append(new_shot)
 
     with jsonlines.open(f'../data/shots/shots_{game_id}.jsonl', 'w') as writer:
-        writer.write(game_shots)
+        writer.write_all(game_shots)
 
     # Extract Shifts from a Game
     shifts = list_shifts(game_id)
@@ -64,17 +65,17 @@ for game in games:
         new_shift = {
             'game_id' : game_id,
             'game_date' : game_date,
-            'data' : shift
+            'data' : json.dumps(shift)
         }
         
         game_shifts.append(new_shift)
 
     with jsonlines.open(f'../data/shifts/shift_{game_id}.jsonl', 'w') as writer:
-        writer.write(game_shifts)
+        writer.write_all(game_shifts)
 
     # Log the game
     all_games.append(new_game)    
 
    
 with jsonlines.open('../data/games/all_games.jsonl', 'w') as writer:
-    writer.write(games)
+    writer.write_all(all_games)
