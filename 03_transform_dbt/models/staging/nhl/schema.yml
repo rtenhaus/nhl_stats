@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: NHL
+    database: joegartenhaus
+    schema: nhl_raw
+
+    quoting:
+      database: true
+      schema: true
+      identifier: true
+
+    tables:
+      - name: games
+        description: Listing of NHL Games
+
+      - name: plays
+        description: Listing of plays in games
+      
+      - name: shifts
+        description: Listing of shifts in games
+
+      - name: shots
+        description: Listing of shots in games
