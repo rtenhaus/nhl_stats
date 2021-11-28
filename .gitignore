@@ -2,6 +2,10 @@
 
 01_extract/venv/
 02_load/venv/
+
 03_transform_dbt/venv/
+03_transform_dbt/target/
+03_transform_dbt/dbt_modules
+03_transform_dbt/logs
 
 data/
