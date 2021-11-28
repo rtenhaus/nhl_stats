@@ -1,5 +1,6 @@
 name: 'nhl_stats'
 version: '1.0.0'
+require-dbt-version: '>=0.21.0'
 config-version: 2
 
 # This setting configures which 'profile' dbt uses for this project.  See profiles.yml sample file in this folder
@@ -18,3 +19,20 @@ clean-targets:        # directories to be removed by `dbt clean`
   - 'dbt_modules'
 
 # variables
+
+# model configs
+models:
+  # project
+  nhl_stats:
+    +materialized: table
+
+    staging:
+      +schema: staging
+      +tags:
+        - staging
+        - nhl
+
+# CSV Seed Files
+seeds:
+  nhl_stats:
+    +schema: seeds
