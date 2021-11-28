@@ -11,7 +11,7 @@ analysis-paths: ['analysis']
 test-paths: ['tests']
 data-paths: ['data']
 macro-paths: ['macros']
-snapshots: ['snapshots']
+# snapshots: ['snapshots']
 
 target-path: 'target' # directory to store compiled SQL files
 clean-targets:        # directories to be removed by `dbt clean`
