@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: NHL
-    database: joegartenhaus
+    database: rtenha
     schema: nhl_raw
 
     quoting:
