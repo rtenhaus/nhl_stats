@@ -3,10 +3,10 @@ from google.cloud import bigquery
 
 
 
-table_plays = 'rtenha.nhl_staging.plays'
-table_shifts = 'rtenha.nhl_staging.shifts'
-table_games = 'rtenha.nhl_staging.games'
-table_shots = 'rtenha.nhl_staging.shots'
+table_plays = 'rtenha.nhl_raw.plays'
+table_shifts = 'rtenha.nhl_raw.shifts'
+table_games = 'rtenha.nhl_raw.games'
+table_shots = 'rtenha.nhl_raw.shots'
 
 # Config BQ
 bq_client = bigquery.Client()
