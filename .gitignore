@@ -2,6 +2,6 @@
 
 01_extract/venv/
 02_load/venv/
-03_transform/venv/
+03_transform_dbt/venv/
 
 data/
