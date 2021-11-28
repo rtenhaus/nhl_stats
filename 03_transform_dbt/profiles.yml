@@ -1,0 +1,26 @@
+# This is copied from ~/.dbt/profiles.yml for demo purposes only
+
+config:
+  send_anonymous_usage_stats: False
+  use_colors: True
+
+nhl_stats:
+  outputs:
+
+    # Not setting up a dev environment for this demo
+    # dev:
+    #   type: bigquery
+    #   method: oauth
+    #   project: joegartenhaus
+    #   schema: nhl_stats_dev
+    #   threads: 8
+    #   timeout_seconds: 3600
+
+    prod:
+      type: bigquery
+      method: oauth
+      project: joegartenhaus
+      schema: nhl_stats
+      threads: 8
+      timeout_seconds: 3600
+  target: prod  # would use dev if i set up a dev environment
