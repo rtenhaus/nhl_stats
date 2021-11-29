@@ -8,4 +8,4 @@
 03_transform_dbt/dbt_modules
 03_transform_dbt/logs
 
-data/
+/data/
