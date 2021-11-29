@@ -40,6 +40,14 @@ final as (
     
     from goals
 
+    {% if is_incremental() %}
+
+        -- this filter will only be applied on an incremental run
+        -- Let's rerun the last 3 days in case goal/assist attribution changes after review by league office
+        where game_date >= date_sub(date(_dbt_max_partition), interval 3 days)
+
+    {% endif %}
+
 )
 
 select * from final

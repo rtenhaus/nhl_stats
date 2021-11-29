@@ -1,17 +1,5 @@
 -- This model shows results for each game and team, so a game between team A and team B will show up twice, once for each team.
 
-{{
-    config(
-        materialized='table',
-        partition_by={
-            'field': 'game_date',
-            'data_type': 'date',
-            'granularity': 'day'
-        },
-        cluster_by='season, team, opponent'
-    )
-}}
-
 with
 
 staged as ( select * from {{ ref('stg_games') }} ),

@@ -1,17 +1,5 @@
 -- This model models all assists
 
-{{
-    config(
-        materialized='table',
-        partition_by={
-            'field': 'game_date',
-            'data_type': 'date',
-            'granularity': 'day'
-        },
-        cluster_by='game_id'
-    )
-}}
-
 with
 
 primary_assists as ( select * from {{ ref('assists_primary') }} ),
