@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  
+  - name: player_performance_by_season_home
+    description: Basic player stats for home game for each player
+
+  - name: player_performance_by_season_away
+    description: Basic player stats for away game for each player
+

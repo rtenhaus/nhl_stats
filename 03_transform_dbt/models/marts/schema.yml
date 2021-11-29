@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  
+  - name: goals
+    description: Goal data, including scorer, assists, opposing goalie, shot location, timing info, etc.
+
+  - name: assists_primary
+    description: Assist data for primary assists (player to touch puck prior to scorer scoring the goal)
+
+  - name: assists_secondary
+    description: Assist data for secondary assists (player to touch puch prior to primary assist)
+
+  - name: assists_all
+    description: Assist data (primary and secondary) in a 'taller' table
+
+  - name: games_by_team
+    description: Game data, showing home and away for every game from the perspective of the team (ie, ever game is included twice, once for home team and away team)
