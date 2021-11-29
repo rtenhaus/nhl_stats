@@ -22,3 +22,51 @@ sources:
 
       - name: shots
         description: Listing of shots in games
+
+models:
+  - name: stg_games
+    description: Listing of games played
+    columns:
+      - name: game_id
+        tests:
+          - unique
+
+  - name: stg_goalies
+    description: Unique table of goalies
+    columns:
+      - name: player_id
+        tests:
+          - unique
+
+  - name: stg_plays
+    description: Listing of plays in games
+
+  - name: stg_shifts
+    description: Listing of shifts in games
+
+  - name: stg_shots
+    description: Listing of shots in games
+
+  - name: stg_skaters
+    description: Listing of non-goalie players.  Unique Player ID test will fail because there was a trade during the sample data period.  Using a custom test instead!
+    # columns: 
+      # - name: player_id
+      #   tests:
+      #     - unique
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - player_id
+            - team_for
+
+
+  - name: stg_teams
+    description: Unique table of teams in the league
+    columns:
+      - name: team
+        tests:
+          - unique
+
+  - name: stg_venues
+    description: Unique table of arenas that teams play at
+
