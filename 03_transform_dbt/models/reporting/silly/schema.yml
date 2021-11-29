@@ -2,6 +2,6 @@ version: 2
 
 models:
   
-  - name: team_performance_away_games_by_venue_type
+  - name: rpt_team_performance_away_games_by_venue_type
     description: Basic team stats (win, loss, win pct) for away games at different _types_ of stadiums (Arena, Place, Center, Dome, etc).  Silly!
 

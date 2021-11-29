@@ -32,6 +32,14 @@ models:
         - staging
         - nhl
 
+    marts:
+      +tags:
+        - marts
+        - nhl
+
+    reporting:
+      +schema: reporting
+
 # CSV Seed Files
 seeds:
   nhl_stats:
